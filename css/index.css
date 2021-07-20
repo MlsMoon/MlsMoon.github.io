@@ -1,3 +1,9 @@
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
 .img_carousel
 {
     width: 300px;
