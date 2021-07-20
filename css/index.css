@@ -1,3 +1,10 @@
+.item{
+    height: 410px;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
 .img-responsive {
     display: block;
     height: auto;
