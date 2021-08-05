@@ -9,69 +9,45 @@
     <link href="../dist/css/bootstrap.css" rel="stylesheet">
     <link href="../css/Axis.css" rel="stylesheet">
 </head>
-<body>
-<!-- 导航-->
-<div class="navbar-wrapper">
-    <div class="container">
-
-      <nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../index.html">明月橙的个人主页</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li ><a href="../index.html">主页</a></li>
-              <!-- 项目 -->
-              <li class="dropdown" >
-                <a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">完整项目 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown-header">项目名称</li>
-                  <li><a href="#">独立游戏《Axis》</a></li>
-                </ul>
-              </li>
-
-              <li><a href="#">小型demo</a></li>
-              <li><a href="#">技术文章</a></li>
-
-              <!-- drop down -->
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-    </div>
-</div>
+<body class="body-axis">
+<!-- 从js载入导航栏 -->
+<script type="text/javascript" src="../js/navbar.js"></script>
 
     <div class="container">
+        <p> <br/> </p>
+        <p> <br/> </p>
+        <div class="jumbotron">
+            <h1 align="center" >游戏介绍</h1>
+        <hr>
+        <!--  游戏海报 -->
         <div class="row">
             <div class="col-md-12">
-                <p>hello</p>
-                <video width="100%"  controls>
+                
+                <img class="img-rounded" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/axis_screenshot.png">
+                <h2 class="featurette-heading">《Axis》, 2021春 , 第一届CUSGA入围作品</h2>
+                <p>Axis这个游戏是我第一个制作的比较完整的游戏，我是项目负责人，在项目中担任了程序、策划、美术的职责。同时还有两位和我合作的小伙伴，老狗唱山歌制作了2d动画部分，Lythrum负责了一部分程序，接下来我将从几个方面来介绍这款游戏。</p>
+                
+            </div>
+
+
+        </div>
+
+        <!-- 游戏宣传视频v0.1 -->
+        <div class="row ">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1 id="h01" class=" center-block">游戏宣传视频</h1>
+                <video class="center-block img-thumbnail" width="100%"  controls>
                     <source src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/Video/%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91AXIS.mp4" type="video/mp4">
                     您的浏览器不支持 HTML5 video
                 </video>
             </div>
+            <div class="col-md-2"></div>
         </div>
+        </div>
+
+        <!-- 分割线 -->
+
     </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->

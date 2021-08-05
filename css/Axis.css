@@ -1,4 +1,31 @@
 body
 {
     text-align: center;
+    background-image: url(https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/%E5%B0%81%E9%9D%A2-%E9%80%8F%E6%98%8E.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color:rgba(1,1,0,0.1);
+}
+
+
+
+.center-vertical{
+    /*flex 布局*/
+    display: flex;
+    /*实现垂直居中*/
+    align-items: center;
+}
+.center-horziontal
+{
+    margin:0 auto;
+}
+#d01
+{
+    padding-top: 70px; 
+}
+
+#h01
+{
+    font-size: 40px;
 }
