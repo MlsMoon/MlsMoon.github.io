@@ -16,9 +16,11 @@
     <div class="container">
         <p> <br/> </p>
         <p> <br/> </p>
+
+
         <!--第一部分，介绍-->
         <div class="jumbotron">
-            <h1 align="center" >介绍概览</h1>
+            <h1 align="center" >《Axis》介绍概览</h1>
         <!--分割线-->
         <hr>
         <!--  游戏海报 -->
@@ -48,17 +50,122 @@
 
         <!--第二部分玩法说明-->
         <div class="jumbotron">
+            <div class="row">
             <h1 align="center" >游戏玩法</h1>
             <hr>
             <p>在这一章节中，我将主要介绍游戏的玩法</p>
             <p>Axis的主要玩法是将相同的方块，通过操作方块在3个轴向移动，合成更高等级的方块（类似于2048）</p>
             <p>操作方块的移动，需要按住鼠标左键，将鼠标按照想要移动的方向拖拽，即可操作所有方块向同一方向移动，当相同的方块碰撞在一起后，便会出现新的一级方块。</p>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
             <h1 id="h01" class=" center-block">游戏试玩演示</h1>
             <video class="center-block img-thumbnail" width="100%"  controls>
                 <source src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/Video/%E8%AF%95%E7%8E%A9.mp4" type="video/mp4">
                 您的浏览器不支持 HTML5 video
             </video>
+            </div>
+            <div class="col-md-2"></div>
             <hr>
+            </div>
+        </div>
+
+        <!--开发难点-->
+        <div class="jumbotron">
+            <h1>开发难点</h1>
+            <hr>
+            <div class="row featurette">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <p>在这一章上会列一些项目中困难的点，之后有空就写一些知乎来填坑。</p>
+                    <p>程序上，方块的合成系统，经过一次重构后变得比较强壮了，用到了面向对象的思想和对象池。场景在gameplay上没有大的消耗。其次是，旋转，用了旋转矩阵。</p>
+                    <p>在关卡的编辑上，采用了用xml存场景内的东西异步载入，本来打算做一个编辑器，后来因为美术产能的原因放弃了</p>
+                    <p>美术表现上，用的是内置渲染管线，并没有做太多定制化的内容，在做项目的过程中，将unity的lighting系统总结了，自己写了几个小特效shader，可以在知乎上看到，后处理主要靠bloom。</p>
+                    <hr>
+                    <a class="a-axis" href="https://zhuanlan.zhihu.com/p/391346811">传送门：Unity Builtin Light简单总结<br/></a>
+                    <a class="a-axis" href="https://zhuanlan.zhihu.com/p/356670685">传送门：闪烁灯光UIShader<br/></a>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+
+        <!--关卡&场景设计-->
+        <div class="jumbotron">
+            <h1>关卡&场景设计</h1>
+            <hr>
+            <!-- 无尽模式 -->
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <p><br/></p>
+                    <h2 class="text-muted">无尽模式</h2>
+                    <p>特殊模式</p>
+                    <p>除了正常死亡，游戏不会结束</p>
+                    <p>玩家的每一个合成操作都会给自己加分</p>
+                </div>
+                <div  class="col-md-5">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/%E7%94%BB%E9%9D%A2%E6%88%AA%E5%9B%BE/%E6%97%A0%E5%B0%BD.png">
+                </div>
+            </div>
+            <hr>
+            <!-- 实验室 -->
+            <div class="row featurette">
+                <div  class="col-md-5">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/%E7%94%BB%E9%9D%A2%E6%88%AA%E5%9B%BE/%E5%AE%9E%E9%AA%8C%E5%AE%A4.png" >
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-muted">实验室</h2>
+                    <p>教学关卡</p>
+                    <p>小旧的实验室的角落缓缓披上昏暗的光，一只猫闭上了眼睛</p>
+                    <p>主角明月橙为了弥补儿时的遗憾，发明了时光装置，通过收集方块王国的能量，企图回到过去</p>
+                </div>
+            </div>
+            <hr>
+            <!--教室-->
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="text-muted">教室</h2>
+                    <p>第一关</p>
+                    <p>明月橙来到了儿时的教室，他想起了和父亲度过的那些日子</p>
+                    <p>然而Axis装置产生了空间错乱，方块王国中出现了障碍方块，明月橙能否收集满足够的能量前往下一个地点......</p>
+                </div>
+                <div  class="col-md-5">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/%E7%94%BB%E9%9D%A2%E6%88%AA%E5%9B%BE/%E6%95%99%E5%AE%A4.png">
+                </div>
+            </div>
+            <hr>
+            <!-- 梦境 -->
+            <div class="row featurette">
+                <div  class="col-md-5">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/%E7%94%BB%E9%9D%A2%E6%88%AA%E5%9B%BE/%E6%A2%A6%E5%A2%83.png">
+                </div>
+                <div class="col-md-7">
+                    <h2 class="text-muted">梦境</h2>
+                    <p>第二关</p>
+                    <p>爆炸让明月橙失去了意识，沉溺在了思维的海洋中</p>
+                    <p>思绪中出现了吞噬方块，明月橙的意识何去何从......</p>
+                </div>
+            </div>
+            <hr>
+            <!-- 未完待续 -->
+            <div class="row featurette">
+                <h2 class="text-muted">未完待续......</h2>
+            </div>
+        </div>
+
+        <!-- 下载地址 -->
+        <div class="jumbotron">
+            <h1>下载地址</h1>
+            <hr>
+            <div class="row featurette">
+                <a class="a-axis" href="https://pan.baidu.com/s/1ZonyGnXy3CwZclDl0VYOHw">链接  提取码:lpl3</a>
+                
+            </div>
+        </div>
+
+        <!--返回顶部按钮-->
+        <div class="container">
+            <div class="float-right">
+                <a class="gotop d-none d-sm-block" href="javascript:scroll(0,0)">返回顶部</a> 
+            </div>
         </div>
 
 
