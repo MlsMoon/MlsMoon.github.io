@@ -9,7 +9,7 @@ document.writeln("              <span class=\'icon-bar\'></span>");
 document.writeln("              <span class=\'icon-bar\'></span>");
 document.writeln("              <span class=\'icon-bar\'></span>");
 document.writeln("            </button>");
-document.writeln("            <a class=\'navbar-brand\' href=\'../index.html\'>明月橙的个人主页</a>");
+document.writeln("            <a class=\'navbar-brand\' href=\'../index.html\'>明月橙的个人作品</a>");
 document.writeln("          </div>");
 document.writeln("          <div id=\'navbar\' class=\'navbar-collapse collapse\'>");
 document.writeln("            <ul class=\'nav navbar-nav\'>");
