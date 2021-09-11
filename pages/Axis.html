@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>《Axis》</title>
+    <link rel="icon" href="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/icon/orange.ico">
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.css" rel="stylesheet">
     <link href="../css/Axis.css" rel="stylesheet">
@@ -79,9 +80,9 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <p>在这一章上会列一些项目中困难的点，之后有空就写一些知乎来填坑。</p>
-                    <p>程序上，方块的合成系统，经过一次重构后变得比较强壮了，用到了面向对象的思想和对象池。场景在gameplay上没有大的消耗。其次是，旋转，用了旋转矩阵。</p>
+                    <p>程序上，方块的合成系统，经过一次重构后变得比较强壮了，用到了对象池。游戏在gameplay上没有大的消耗，对性能比较有影响的其实是后处理效果。其次是，旋转，用上了旋转矩阵。</p>
                     <p>在关卡的编辑上，采用了用xml存场景内的东西异步载入，本来打算做一个编辑器，后来因为美术产能的原因放弃了</p>
-                    <p>美术表现上，用的是内置渲染管线，并没有做太多定制化的内容，在做项目的过程中，将unity的lighting系统总结了，自己写了几个小特效shader，可以在知乎上看到，后处理主要靠bloom。</p>
+                    <p>美术表现上，用的是内置渲染管线，并没有做太多定制化的内容，在做项目的过程中，将unity的lighting系统总结了，自己写了几个小特效shader，可以在知乎上看到，后处理是依赖bloom效果。</p>
                     <hr>
                     <a class="a-axis" href="https://zhuanlan.zhihu.com/p/391346811">传送门：Unity Builtin Light简单总结<br/></a>
                     <a class="a-axis" href="https://zhuanlan.zhihu.com/p/356670685">传送门：闪烁灯光UIShader<br/></a>
