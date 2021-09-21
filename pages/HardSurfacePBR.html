@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>硬表面PBR案例</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/PBR.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 从js载入导航栏 -->
+    <script type="text/javascript" src="../js/navbar.js"></script>
+    <!----------------------------------------------------------->
+
+    <!--主体-->
+    <div class="container">
+        <div class="col-md-12 ">
+            <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/effect.png" >
+            <br>
+        </div>
+        <!--给导航栏留位置-->
+        <!-- 介绍 -->
+        <div class="jumbotron">
+            <h1 align="center" >从草图到写shader</h1>
+            <h2 class="gray">硬表面PBR全流程案例</h2>
+
+            <!--part1 introduction-->
+            <!--分割线-->
+            <hr>
+            <h2>一、简单介绍</h2>
+            <p>起因是大二的一节三维动画课，作业是做一个大概在1分半左右的三维动画</p>
+            <p>当时我决定用实时渲染的方式做一部动画，可能是eevee或者ue4，最后其实两者都用到了</p>
+            <p>这部动画主要是一个战斗机甲出动的过程，模型是按照PBR的流程做的</p>
+            <p>放假的时候自己抄的公式搞了一个简易的PBR光照，于是就想把这个案例记录一下</p>
+            <br>
+
+            <!--part2 design-->
+            <hr>
+            <h2>二、前期设计</h2>
+            <p>在这个阶段最重要的是形状的表达，将你的设计意图传递给建模师或几天后的自己</p>
+            <p>如果设计不好好做，在建模时可能导致模型与一开始的想法偏离</p>
+            <!--图片-->
+            <div class="row featurette">
+            <div class="col-md-6 col-md-push-3 " >
+                <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/%E6%96%B0%E6%9C%BA%E8%AE%BE.png" >
+            </div>
+            </div>
+            <br>
+
+            <!--part3 model-->
+            <hr>
+            <h2>三、模型制作</h2>
+            <p>机械的硬表面感很大一部分来自一个叫做倒角的东西</p>
+            <p>在这个项目中，并没有雕刻高模的需求，所以少了拓扑这个步骤</p>
+                        <!--图片-->
+                        <div class="row featurette">
+                            <div class="col-md-6 col-md-push-3 " >
+                                <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/model.png" >
+                            </div>
+                        </div>
+            <br>
+
+            <!--part4 processing model-->
+            <hr>
+            <h2>四、处理模型</h2>
+            <p>在这一步中，很多操作都是为后面的步骤服务</p>
+            <p>首先要考虑做动画的问题</p>
+            <p>在这个项目中，因为是硬表面的机械结构，所以决定动画k在transform上</p>
+            <p>但要注意的是，如果导入到引擎，需要考虑导出时的坐标系转换问题</p>
+            <p>对于人物来说，一般就是绑骨蒙皮两个步骤</p>
+            <p>其次，需要对模型进行降低面数的操作，如果有雕刻过，需要把高模也保存下来，方便后面做贴图。</p>
+            <br>
+
+            <!-- patr5 sp -->
+            <hr>
+            <h2>五、uv与纹理</h2>
+            <p>uv在blender里分好，之后用sp做贴图，选择PBR标准的</p>
+            <p>在sp中先做材质，再加细节</p>
+            <p>在这个项目中，总共需要用到 金属度、粗糙度、法线、自发光、AO</p>
+            <p>在实际生产中，需要根据项目性能需求与shader，来进行合并通道来降低采样次数</p>
+            <p>如果有高模，也需要把高模的细节烘培到贴图上</p>
+            <!-- pic -->
+            <div class="row featurette">
+                <div class="col-md-8 col-md-push-2">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/sp.png">
+                </div>
+            </div>
+            <br>
+
+            <!-- shader -->
+            <hr>
+            <h2>六、shader</h2>
+            <p>写在前面，这个PBR材质目前只支持前向单平行光+天空盒环境光，更多的部分还暂时不支持</p>
+            <p>首先看对比图</p>
+            <p>Unity默认材质与cook-torrance BRDF的对比</p>
+            <div class="row featurette">
+                <div class="col-md-8 col-md-push-2">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/brdf.png">
+                </div>
+            </div>       
+            <p></p>
+            <p>从对比图中可以看出，Unity默认材质对高光和环境光的表达有些猎奇，所以导致了默认材质的廉价塑料质感</p>     
+            <p>接下来就到写的部分了</p>
+            <p>先来直接光</p>
+            <p>直接光 = 直接光漫反射+ 直接光高光</p>
+            <p>如果不懂原理的话，可以去学习一下别的文章，我这就直接上结论了</p>
+            <div class="row featurette">
+                <div class="col-md-10 col-md-push-1">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/pbr.png">
+                </div>
+            </div>             
+            <p></p>
+            <p>先来直接光的高光部分</p>
+            <p>就是加号右边的部分，也就是DFG这部分，于是我们开始先把高光（镜面反射）部分搞定</p>
+            <p>具体算法这里就不详细写明了,DFG要除一个数，这个数值应该是来自于经验模型</p>
+            <div class="row featurette">
+                <div class="col-md-10 col-md-push-1">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/directSpec.png">
+                </div>
+            </div>  
+            <p></p>
+            <p>下一步，获得直接光漫反射,并相加</p>
+            <div class="row featurette">
+                <div class="col-md-10 col-md-push-1">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/dirdif.png">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/add.png">
+                </div>
+            </div>              
+            <p></p>
+            <p>这样我们得到了一个直接光的结果，但这个时候，其实效果还是很鸡肋的，因为缺失了环境光</p>       
+            <p>环境光的计算比较复杂，在实际的光照中，物体的很多光来自环境，同时环境光也是从各个方向射来的</p>
+            <p>所以在实时渲染中完整地计算环境光几乎是不可能的，常见的解决方案有预计算和拟合函数。</p>
+            <p>在我的解决方案里，是通过调用unity内置光照函数，来直接拿到立方体采样和球谐函数的数据</p>
+            <div class="row featurette">
+                <div class="col-md-10 col-md-push-1">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/env1.png">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/env2.png">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/env3.png">
+                </div>
+            </div>    
+            <br>
+
+
+            <!--effect-->
+            <hr>
+            <h2>七、最终效果</h2>
+            <p>最后在引擎里把模型和材质处理好</p>
+            <div class="row featurette">
+                <div class="col-md-10 col-md-push-1">
+                    <img class="img-rounded img-responsive" src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/childPages/hardsurfpbr/effect.png">
+                </div>
+            </div>
+            <h3>项目源码：<a href="https://github.com/MlsMoon/UnityBulit-inPBRv1.0">https://github.com/MlsMoon/UnityBulit-inPBRv1.0</a></h3>
+
+
+        </div>
+
+
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+</body>
+</html>
