@@ -13,26 +13,41 @@
     <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 </head>
-<body class="body-axis">
+<body class="body-axis" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="350">
 <!-- 从js载入导航栏 -->
 
 <!-- <script type="text/javascript" src="../js/navbar.js"></script> -->
 
-<div data-spy="affix">
+<div data-spy="affix" style="z-index:1">
     <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
         <a class="navbar-brand" href="#">目录</a>
         <nav class="nav nav-pills flex-column">
-            <a class="nav-link" href="#item-1">Item 1</a>
+            <a class="nav-link active" href="#Video">混剪视频</a>
+            <a class="nav-link" href="#GameDemo">游戏Demo</a>
             <nav class="nav nav-pills flex-column">
-                <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-                <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                <a class="nav-link ms-3 my-1 " href="#GameDemo-BS">《临界》UE4VR游戏</a>
+                <a class="nav-link ms-3 my-1" href="#GameDemo-Axis">《Axis轴》</a>
+                <a class="nav-link ms-3 my-1 " href="#GameDemo-SYJX">《深渊觉醒》</a>
             </nav>
-            <a class="nav-link" href="#item-2">Item 2</a>
-            <a class="nav-link active" href="#item-3">Item 3</a>
+            <a class="nav-link " href="#item-3">场景类</a>
             <nav class="nav nav-pills flex-column">
-                <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-                <a class="nav-link ms-3 my-1 active" href="#item-3-2">Item 3-2</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-1">HDRP写实庭院场景</a>
+                <a class="nav-link ms-3 my-1 " href="#item-3-2">URP海岛场景</a>
+                <a class="nav-link ms-3 my-1 " href="#item-3-2">UE风格化场景</a>
+                <a class="nav-link ms-3 my-1 " href="#item-3-2">Blender场景概念设计</a>
             </nav>
+            <a class="nav-link " href="#item-3">效果Demo类</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">PBR效果练习</a>
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">RayMarching练习</a>
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">卡通渲染练习</a>
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">GPU Instance草地练习</a>
+                </nav>
+            <a class="nav-link " href="#item-3">工具类</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">Unity减面工具</a>
+                </nav>
+            <a class="nav-link " href="#DownloadPDF">PDF下载</a>
         </nav>
     </nav>
 </div>
@@ -46,7 +61,7 @@
 
         <!-- <div data-spy="affix" data-offset="90">affix元素</div> -->
 
-        <!--第一部分，介绍-->
+        <!--作品集混剪-->
         <div class="jumbotron">
             <h1 align="center" >作品集</h1>
         <!--分割线-->
@@ -57,30 +72,108 @@
         <!-- 游戏宣传视频v0.1 -->
         <div class="row ">
             <div class="col-md-2">
-
             </div>
-            <div class="col-md-8">
-                <h1 id="h01" class=" center-block">作品集混剪</h1>
+            <div id="Video" class="col-md-8">
+                <h1 id="h01" class="display-2 center-block" align="center">混剪视频（很久以前的）</h1>
                 <video class="center-block img-thumbnail" width="100%"  controls>
                     <source src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/Video/WorksCollection0219.mp4" type="video/mp4">
                     您的浏览器不支持 HTML5 video
                 </video>
             </div>
             <div class="col-md-2">
-
             </div>
         </div>
+
+        
+        <!--游戏Demo-->
+        <div class="jumbotron">
+            <h2 align="center" class="display-2" id = "GameDemo" >游戏Demo</h2>
+        <!--分割线-->
+        <hr>
+
+        <!-- 临界 -->
+        <div id ="GameDemo-BS" class="row align-items-center" align="right">
+            <h1><br/></h1>
+            <div class="col-sm-2">
+            </div>
+
+            <div  class="col-sm-4 align-self-center">
+                <P >
+                    <img class="img-responsive center-block rounded"  src="https://mlsmoon-1259643536.cos.ap-shanghai.myqcloud.com/Images/WorkCollection/BetweenSkyline.png" alt="Generic placeholder image">
+                </P>
+            </div>
+
+            <div class="col-sm-4">
+            <h2 class="center-horziontal display-2">《临界》</h2>
+            <br/>
+            <p align = "left">UE4VR游戏，国美毕设项目，我参与了项目合作开发，主要负责程序支持以及解决美术表现上的困难问题</p>
+            <a align="center" role="button" type="button" class="btn btn-outline-primary btn-lg" href="../pages/Axis.html"> <h2>更多</h2></a>
+            </div>
+
+            <div class="col-sm-2">
+            </div>
+        </div>
+
+        <!-- Axis -->
+        <div id ="GameDemo-Axis" class="row align-items-center">
+            <h1><br/></h1>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-4">
+            <h2 class="center-horziontal display-2">《Axis》</h2>
+            <br/>
+            <p>Axis这个游戏是我第一个制作的比较完整的游戏，我是项目负责人，在项目中担任了程序、策划、美术的职责……</p>
+            <a role="button" type="button" class="btn btn-outline-primary btn-lg" href="../pages/Axis.html"> <h2>更多</h2></a>
+            </div>
+            <div  class="col-sm-4 align-self-center">
+                <P >
+                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/axis_screenshot.png" alt="Generic placeholder image">
+                </P>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+
+        <!-- 深渊觉醒 -->
+        <div id ="GameDemo-SYJX" class="row align-items-center" align="right">
+            <h1><br/></h1>
+            <div class="col-sm-2">
+            </div>
+
+            <div  class="col-sm-4 align-self-center">
+                <P >
+                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/axis_screenshot.png" alt="Generic placeholder image">
+                </P>
+            </div>
+
+            <div class="col-sm-4">
+            <h2 class="center-horziontal display-2">《深渊觉醒》</h2>
+            <br/>
+            <p align = "left">Roguelike自走棋游戏，学校的专业课大作业，我负责程序开发与美术设计上的工作</p>
+
+            <a  role="button" type="button" class="btn btn-outline-primary btn-lg" href="../pages/Axis.html"> <h2>更多</h2></a>
+            </div>
+
+            <div class="col-sm-2">
+            </div>
+        </div>
+
+        <h1><br/></h1>
+        <hr class="featurette-divider">
+        <h1><br/></h1>
+
+
         </div>
 
 
-
+            
 
 
 
 
         <!-- 下载地址 -->
         <div class="jumbotron">
-            <h1>PDF版本下载</h1>
+            <h1 id ="DownloadPDF">PDF版本下载</h1>
             <hr>
             <div class="row featurette">
                 <a class="a-axis" href="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/Video/%E9%97%B5%E4%B9%90%E6%99%9F_%E4%BD%9C%E5%93%81%E9%9B%86.pdf">点我下载</a>
@@ -88,28 +181,7 @@
             </div>
         </div>
 
-        <!-- 无意义的填充 -->
-        <div class="jumbotron">
-            <h1>填充</h1>
-            <h1>填充</h1>
-            <h1>填充</h1>
-            <h1>填充</h1>
-            <h1>填充</h1>
-            <h1>填充</h1>
-            <h1>填充</h1>
-            <h1>填充</h1>
-
-            </div>
-        </div>
-
-        
-
-        <!--返回顶部按钮-->
-        <div class="container">
-            <div class="float-right">
-                <a class="gotop d-none d-sm-block" href="javascript:scroll(0,0)">返回顶部</a> 
-            </div>
-        </div>
+    
 
 
     </div>
