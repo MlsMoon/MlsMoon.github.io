@@ -18,25 +18,27 @@
 
 <!-- <script type="text/javascript" src="../js/navbar.js"></script> -->
 
+
 <div data-spy="affix" style="z-index:1">
-    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
-        <a class="navbar-brand" href="#">目录</a>
+    <nav id="navbar-example3" class="collapse navbar-expand-md navbar-collapse navbar-light bg-light flex-column align-items-stretch p-3">
+
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#">目录</a>
+        
         <nav class="nav nav-pills flex-column">
             <a class="nav-link active" href="#Video">混剪视频</a>
             <a class="nav-link" href="#GameDemo">游戏Demo</a>
             <nav class="nav nav-pills flex-column">
-                <a class="nav-link ms-3 my-1 " href="#GameDemo-BS">《临界》UE4VR游戏</a>
+                <a class="nav-link ms-3 my- " href="#GameDemo-BS">《临界》UE4VR游戏</a>
                 <a class="nav-link ms-3 my-1" href="#GameDemo-Axis">《Axis轴》</a>
                 <a class="nav-link ms-3 my-1 " href="#GameDemo-SYJX">《深渊觉醒》</a>
             </nav>
-            <a class="nav-link " href="#item-3">场景类</a>
+            <a class="nav-link " href="#scene">美术&场景作品</a>
             <nav class="nav nav-pills flex-column">
-                <a class="nav-link ms-3 my-1" href="#item-3-1">HDRP写实庭院场景</a>
-                <a class="nav-link ms-3 my-1 " href="#item-3-2">URP海岛场景</a>
-                <a class="nav-link ms-3 my-1 " href="#item-3-2">UE风格化场景</a>
-                <a class="nav-link ms-3 my-1 " href="#item-3-2">Blender场景概念设计</a>
+                <a class="nav-link ms-3 my-1" href="#scene-hdrp">HDRP写实庭院场景</a>
+                <a class="nav-link ms-3 my-1 " href="#scene-island">URP海岛场景</a>
+                <a class="nav-link ms-3 my-1 " href="#scene-hy">Blender场景概念设计</a>
             </nav>
-            <a class="nav-link " href="#item-3">效果Demo类</a>
+            <a class="nav-link " href="#item-3">效果&解决方案</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ms-3 my-1" href="#item-3-1">PBR效果练习</a>
                     <a class="nav-link ms-3 my-1" href="#item-3-1">RayMarching练习</a>
@@ -50,6 +52,8 @@
             <a class="nav-link " href="#DownloadPDF">PDF下载</a>
         </nav>
     </nav>
+
+
 </div>
 
     <div class="container">
@@ -74,7 +78,7 @@
             <div class="col-md-2">
             </div>
             <div id="Video" class="col-md-8">
-                <h1 id="h01" class="display-2 center-block" align="center">混剪视频（很久以前的）</h1>
+                <h1 id="h01" class="display-2 center-block" align="center">混剪视频（旧版）</h1>
                 <video class="center-block img-thumbnail" width="100%"  controls>
                     <source src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/Video/WorksCollection0219.mp4" type="video/mp4">
                     您的浏览器不支持 HTML5 video
@@ -87,7 +91,9 @@
         
         <!--游戏Demo-->
         <div class="jumbotron">
-            <h2 align="center" class="display-2" id = "GameDemo" >游戏Demo</h2>
+            <h2 align="center" class="display-2" id = "GameDemo" >
+                <strong>游戏Demo</strong>
+            </h2>
         <!--分割线-->
         <hr>
 
@@ -142,7 +148,7 @@
 
             <div  class="col-sm-4 align-self-center">
                 <P >
-                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/axis/axis_screenshot.png" alt="Generic placeholder image">
+                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/WorkCollectionImages/SYJX.png" alt="Generic placeholder image">
                 </P>
             </div>
 
@@ -158,9 +164,78 @@
             </div>
         </div>
 
-        <h1><br/></h1>
-        <hr class="featurette-divider">
-        <h1><br/></h1>
+        <!--游戏Demo-->
+        <div class="jumbotron">
+            <h2 align="center" class="display-2" id = "scene" >
+                <strong>      美术&场景作品            </strong>
+            </h2>
+        <!--分割线-->
+        <hr>
+
+        <!-- HDRP庭院 -->
+        <div id ="scene-hdrp" class="row align-items-center">
+            <h1><br/></h1>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-4">
+            <h2 class="center-horziontal display-2">HDRP庭院场景</h2>
+            <br/>
+            <p>写实场景<br>使用引擎特性为主的作品，主要制作点在美术资产与材质上，制作了建筑、墙面的模型资产，墙体、地面等用到了分层材质，贴花等，实现了池塘的材质效果</p>
+            <a role="button" type="button" class="btn btn-outline-primary btn-lg" href="#"> <h2>更多</h2></a>
+            </div>
+            <div  class="col-sm-4 align-self-center">
+                <P >
+                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/WorkCollectionImages/whtjt.png" alt="Generic placeholder image">
+                </P>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+
+        <!-- URP海岛 -->
+        <div id ="scene-island" class="row align-items-center" align="right">
+            <h1><br/></h1>
+            <div class="col-sm-2">
+            </div>
+
+            <div  class="col-sm-4 align-self-center">
+                <P >
+                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/WorkCollectionImages/Island.png" alt="Generic placeholder image">
+                </P>
+            </div>
+
+            <div class="col-sm-4">
+            <h2 class="center-horziontal display-2">URP海岛场景</h2>
+            <br/>
+            <p align = "left">风格化场景<br>一个海岛场景的练习，制作了卡通风格的水、沙地、草地、石砖、材质、草地风动等效果，部分纹理使用SD制作。</p>
+
+            <a  role="button" type="button" class="btn btn-outline-primary btn-lg" href="../pages/Axis.html"> <h2>更多</h2></a>
+            </div>
+
+            <div class="col-sm-2">
+            </div>
+        </div>
+
+
+        <!-- 概念设计 -->
+        <div id ="scene-hy" class="row align-items-center">
+            <h1><br/></h1>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-4">
+            <h2 class="center-horziontal display-2">概念设计</h2>
+            <br/>
+            <p>作品名称：洄游<br>一场瘟疫让世界上大部分的城市荒废，5年后，人类重返故地...<br>软件：Blender Cycles<br>资产来源：Megascans</p>
+            <a role="button" type="button" class="btn btn-outline-primary btn-lg" href="#"> <h2>更多</h2></a>
+            </div>
+            <div  class="col-sm-4 align-self-center">
+                <P >
+                    <img class="img-responsive center-block rounded"  src="https://myc01.oss-cn-shanghai.aliyuncs.com/Assest/WorkCollectionImages/gnsj-hy.jpg" alt="Generic placeholder image">
+                </P>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
 
 
         </div>
